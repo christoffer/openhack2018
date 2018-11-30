@@ -1,0 +1,2 @@
+pdfminer==20140328
+virtualenv==16.1.0
