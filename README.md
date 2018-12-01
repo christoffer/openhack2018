@@ -1,4 +1,4 @@
-Team name: Resi  
+#Resi  
   
 Chosen case  
   
