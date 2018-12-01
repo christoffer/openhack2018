@@ -11,6 +11,10 @@ Chosen case
 The solution (One sentence only)  
   
 Applied open source license    
+- libnabo (no license)  
+- ocrmypdf (GNU general public license)  
+- coreNLP (GNU general public license)  
+- Swedish Python Routines (GNU general public license)  
 
 Getting started with your development-environment 
   
@@ -25,5 +29,6 @@ Steps to carry out solution:
   
 Languages used    
 - Python3  
+- Bash ShellScript
   
 Team members: Christoffer Klang, Mikael Zwahlen, Eric Kuan, Sharon Yeo    
