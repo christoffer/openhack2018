@@ -1,0 +1,52 @@
+[
+    {
+        "category": {
+            "code": "A02"
+        },
+        "format": "application/pdf",
+        "title": {
+            "narrative": "Regeringskanslibeslut M2016/01018/S Bidrag-RK, Bidrag till sekretariatet f\u00f6r konventionen om\ninternationell handel med utrotningshotade vilda djur\noch v\u00e4xter (CITES)"
+        },
+        "url": "http://iati.openaid.se/docs/1812111_1_1.PDF"
+    },
+    {
+        "category": {
+            "code": "A08"
+        },
+        "format": "",
+        "title": {
+            "narrative": "Missiv, inkommen \u00e5terrapportering vidarebefodrad fr\u00e5n Milj\u00f6departementet, CITES"
+        },
+        "url": "http://iati.openaid.se/docs/2136250_1_0.MSG"
+    },
+    {
+        "category": {
+            "code": "A08"
+        },
+        "format": "application/pdf",
+        "title": {
+            "narrative": "Redovisning CITES."
+        },
+        "url": "http://iati.openaid.se/docs/2136251_1_1.PDF"
+    },
+    {
+        "category": {
+            "code": "A08"
+        },
+        "format": "",
+        "title": {
+            "narrative": "Mejl: Avslutningspm f\u00f6r M2016/01018/S"
+        },
+        "url": "http://iati.openaid.se/docs/2311404_1_0.MSG"
+    },
+    {
+        "category": {
+            "code": "A08"
+        },
+        "format": "application/pdf",
+        "title": {
+            "narrative": "Avslutningspm f\u00f6r M2016/01018/S"
+        },
+        "url": "http://iati.openaid.se/docs/2311405_1_1.PDF"
+    }
+]

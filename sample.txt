@@ -1,0 +1,337 @@
+{
+    "iati-activity": {
+        "activity-date": [
+            {
+                "iso-date": "2016-04-01",
+                "type": "2"
+            },
+            {
+                "iso-date": "2016-12-28",
+                "type": "4"
+            }
+        ],
+        "activity-status": {
+            "code": "4"
+        },
+        "budget": [
+            {
+                "period-end": {
+                    "iso-date": "2016-12-31"
+                },
+                "period-start": {
+                    "iso-date": "2016-01-01"
+                },
+                "value": {
+                    "text": "17530.532343",
+                    "value-date": "2016-01-01"
+                }
+            },
+            {
+                "period-end": {
+                    "iso-date": "2017-12-31"
+                },
+                "period-start": {
+                    "iso-date": "2017-01-01"
+                },
+                "value": {
+                    "text": "0",
+                    "value-date": "2017-01-01"
+                }
+            },
+            {
+                "period-end": {
+                    "iso-date": "2018-12-31"
+                },
+                "period-start": {
+                    "iso-date": "2018-01-01"
+                },
+                "value": {
+                    "text": "0",
+                    "value-date": "2018-11-20"
+                }
+            },
+            {
+                "period-end": {
+                    "iso-date": "2019-12-31"
+                },
+                "period-start": {
+                    "iso-date": "2019-01-01"
+                },
+                "value": {
+                    "text": "0",
+                    "value-date": "2018-11-20"
+                }
+            }
+        ],
+        "collaboration-type": {
+            "code": "1"
+        },
+        "conditions": {
+            "attached": "0"
+        },
+        "contact-info": {
+            "email": "http://www.government.se/sb/d/3131/a/18590",
+            "mailing-address": {
+                "narrative": {
+                    "text": "SE-103 33 STOCKHOLM, Sweden",
+                    "xml:lang": "en"
+                }
+            },
+            "organisation": {
+                "narrative": {
+                    "text": "Government Offices of Sweden",
+                    "xml:lang": "en"
+                }
+            },
+            "telephone": "+46 8 405 10 00",
+            "website": "http://www.government.se/"
+        },
+        "country-budget-items": {
+            "budget-item": {
+                "code": "4.2.1",
+                "description": {
+                    "narrative": "\"Environment - policy"
+                },
+                "percentage": "100"
+            },
+            "vocabulary": "1"
+        },
+        "crs-add": {
+            "other-flags": [
+                {
+                    "code": "1",
+                    "significance": "0"
+                },
+                {
+                    "code": "2",
+                    "significance": "0"
+                },
+                {
+                    "code": "3",
+                    "significance": "0"
+                }
+            ]
+        },
+        "default-aid-type": {
+            "code": "D02"
+        },
+        "default-currency": "USD",
+        "default-finance-type": {
+            "code": "110"
+        },
+        "default-flow-type": {
+            "code": "10"
+        },
+        "description": {
+            "narrative": [
+                {
+                    "text": "Contribution to CITES. Participation for developing countries in Conference of Parties with the Convention on International Trade in Endangered Species of Wild Fauna and Flora.",
+                    "xml:lang": "sv"
+                },
+                "Contribution to CITES. Participation for developing countries in Conference of Parties with the Convention on International Trade in Endangered Species of Wild Fauna and Flora."
+            ],
+            "type": "1"
+        },
+        "document-link": [
+            {
+                "category": {
+                    "code": "A02"
+                },
+                "format": "application/pdf",
+                "title": {
+                    "narrative": "Regeringskanslibeslut M2016/01018/S Bidrag-RK, Bidrag till sekretariatet f\u00f6r konventionen om\ninternationell handel med utrotningshotade vilda djur\noch v\u00e4xter (CITES)"
+                },
+                "url": "http://iati.openaid.se/docs/1812111_1_1.PDF"
+            },
+            {
+                "category": {
+                    "code": "A08"
+                },
+                "format": "",
+                "title": {
+                    "narrative": "Missiv, inkommen \u00e5terrapportering vidarebefodrad fr\u00e5n Milj\u00f6departementet, CITES"
+                },
+                "url": "http://iati.openaid.se/docs/2136250_1_0.MSG"
+            },
+            {
+                "category": {
+                    "code": "A08"
+                },
+                "format": "application/pdf",
+                "title": {
+                    "narrative": "Redovisning CITES."
+                },
+                "url": "http://iati.openaid.se/docs/2136251_1_1.PDF"
+            },
+            {
+                "category": {
+                    "code": "A08"
+                },
+                "format": "",
+                "title": {
+                    "narrative": "Mejl: Avslutningspm f\u00f6r M2016/01018/S"
+                },
+                "url": "http://iati.openaid.se/docs/2311404_1_0.MSG"
+            },
+            {
+                "category": {
+                    "code": "A08"
+                },
+                "format": "application/pdf",
+                "title": {
+                    "narrative": "Avslutningspm f\u00f6r M2016/01018/S"
+                },
+                "url": "http://iati.openaid.se/docs/2311405_1_1.PDF"
+            }
+        ],
+        "hierarchy": "2",
+        "iati-identifier": "SE-0-SE-11-10035A0101-GGG-41010",
+        "last-updated-datetime": "2018-11-20T17:13:37",
+        "participating-org": [
+            {
+                "narrative": "Ministry of the Environment",
+                "ref": "SE-11",
+                "role": "3",
+                "type": "10"
+            },
+            {
+                "narrative": "Sweden",
+                "ref": "SE-0",
+                "role": "1",
+                "type": "10"
+            },
+            {
+                "narrative": "Convention on International Trade in Endangered Species of Wild Flora and Fauna",
+                "ref": "47022",
+                "role": "4",
+                "type": "40"
+            },
+            {
+                "narrative": "CITES/Convention on Internatio",
+                "role": "2"
+            }
+        ],
+        "planned-disbursement": {
+            "period-end": {
+                "iso-date": "2016-12-31"
+            },
+            "period-start": {
+                "iso-date": "2016-01-01"
+            },
+            "value": {
+                "text": "17530.532343",
+                "value-date": "2016-01-01"
+            }
+        },
+        "policy-marker": [
+            {
+                "code": "1",
+                "narrative": "Gender Equality",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "2",
+                "narrative": "Aid to Environment",
+                "significance": "2",
+                "vocabulary": "1"
+            },
+            {
+                "code": "3",
+                "narrative": "Participatory Development/Good Governance",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "4",
+                "narrative": "Trade Development",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "5",
+                "narrative": "Aid Targeting the Objectives of the Convention on Biological Diversity",
+                "significance": "2",
+                "vocabulary": "1"
+            },
+            {
+                "code": "6",
+                "narrative": "Aid Targeting the Objectives of the Framework Convention on Climate Change - Mitigation",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "7",
+                "narrative": "Aid Targeting the Objectives of the Framework Convention on Climate Change - Adaptation",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "8",
+                "narrative": "Aid Targeting the Objectives of the Convention to Combat Desertification",
+                "significance": "0",
+                "vocabulary": "1"
+            },
+            {
+                "code": "9",
+                "narrative": "Reproductive, Maternal, Newborn and Child Health (RMNCH)",
+                "significance": "0",
+                "vocabulary": "1"
+            }
+        ],
+        "recipient-region": {
+            "code": "998",
+            "narrative": "Bilateral, unspecified",
+            "percentage": "100"
+        },
+        "reporting-org": {
+            "narrative": "Sweden",
+            "ref": "SE-0",
+            "secondary-reporter": "0",
+            "type": "10"
+        },
+        "sector": {
+            "code": "41010",
+            "narrative": "Environmental policy and administrative management",
+            "percentage": "100",
+            "vocabulary": "1"
+        },
+        "title": {
+            "narrative": [
+                {
+                    "text": "CITES 2016",
+                    "xml:lang": "sv"
+                },
+                "CITES 2016 - 716205 - M2016/01018/S - CITES 2016"
+            ]
+        },
+        "transaction": [
+            {
+                "transaction-date": {
+                    "iso-date": "2016-04-01"
+                },
+                "transaction-type": {
+                    "code": "2"
+                },
+                "value": {
+                    "text": "17530.532343",
+                    "value-date": "2016-04-01"
+                }
+            },
+            {
+                "transaction-date": {
+                    "iso-date": "2016-12-28"
+                },
+                "transaction-type": {
+                    "code": "3"
+                },
+                "value": {
+                    "text": "17530.532343",
+                    "value-date": "2016-01-01"
+                }
+            }
+        ],
+        "xml:lang": "en"
+    },
+    "iati-extra:version": "2.01"
+}
