@@ -44,7 +44,7 @@ def main():
     with open('all_sedi_activites_api_call.json') as f:
         data = json.load(f)
         activities = data['iati-activities']
-    download_and_cache_missing_pdfs(activities[1:10])
+    download_and_cache_missing_pdfs(activities)
     
 if __name__ == "__main__":
     main()
