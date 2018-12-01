@@ -11,6 +11,10 @@ from pdfminer.layout import LAParams
 from pdfminer.image import ImageWriter
 import io
 import re
+import nltk
+from nltk.stem import SnowballStemmer
+from nltk.probability import FreqDist
+from nltk.corpus import stopwords
 
 def pdf_to_text(filename):
     resource_manager = PDFResourceManager(caching=True)
@@ -32,13 +36,22 @@ def pdf_to_text(filename):
     return outfile.getvalue()
 
 def get_word_tokens(text):
-    word_tokens = text.split()
-    return [token for token in word_tokens if re.match(r'\w+', token)]
+    tokens = nltk.word_tokenize(text)
+    # Filter out tokens that aren't words, because we only care about keywords
+    word_tokens = [token for token in tokens if re.match(r'^\w+$', token)]
+    # Filter out stopwords
+    return [token for token in word_tokens if not token in stopwords.words('swedish')]
+
 
 def main():
     text = pdf_to_text("sample_pdf/not_a_result_file.pdf")
-    for t in get_word_tokens(text):
-        print(t)
+    stemmer = SnowballStemmer("swedish", ignore_stopwords=True)
+    normalized_tokens = [
+        stemmer.stem(token.lower())
+        for token in get_word_tokens(text)
+    ]
+    print(FreqDist(normalized_tokens).most_common(10))
+
 
 if __name__ == "__main__":
     main()
