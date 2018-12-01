@@ -1,9 +1,3 @@
-# Get started
-```
-pip install virtualenv
-virtualenv venv
-osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
-```
 Team name: Resi  
   
 Chosen case  
@@ -16,7 +10,13 @@ Applied open source license
 - coreNLP (GNU general public license)  
 - Swedish Python Routines (GNU general public license)  
 
+  
 Getting started with your development-environment 
+```
+pip install virtualenv
+virtualenv venv
+osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
+```
   
 Services used: API from d-portal.org for Sida activities, Jupyter Lab, Jupyter Notebook, ocrmypdf, k Nearest Neighbour algorithm  
   
