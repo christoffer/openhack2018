@@ -18,17 +18,30 @@ virtualenv venv
 osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
 ```
   
-Services used: API from d-portal.org for Sida activities, Jupyter Lab, Jupyter Notebook, ocrmypdf, k Nearest Neighbour algorithm  
+Services used:  
+- API calls from d-portal.org for SIDA's activities  
+- Jupyter Lab and Jupyter Notebook (running scripts online)  
+- ocrmypdf (running OCR on PDFs)  
+- coreNLP (language processing for English documents)  
+- Swedish Python Routines (language processing for Swedish documents)  
+- libnado (running k-nearest neighbor algorithm)  
   
 Steps to carry out solution:  
-1) Obtained API from website d-portal.org containing International Aid Transparency Initiative (IATI) data, so as to fetch 250 different activities in files that might or might not contain results. This is a small sample of the ~100,000 files available.
-2) We screened the 250 activities and by the website's coding classification, shortlisted 169 activities containing results 
-- Jupyter Lab and Jupyter Notebook for running scripts over cloud  
-- ocrmypdf to carry out optical character recognition of pdf files  
-- k Nearest Neighbor algorithm for determining the frequency of key words  
+1) Get iata-identifiers of activities with known recipient country  
+2) Make API calls to get JSON file containing details tied with the activity  
+3) Filter for completed activities using the activity status code  
+4) Get and filter url to PDF results documents tied to the activities using the document format and report format code  
+5) Determine the language of the document  
+6) Run NLP on the document to do word stemming and remove stop words  
+7) Use the k-nearest neighbor algorithm to calculate the weight of key words  
+8) Create a JSON file tying a country to its weighted key words  
+9) Fetch JSON file on webpage to display results on webpage  
   
 Languages used    
 - Python3  
 - Bash ShellScript
+- HTML
+- CSS
+- JavaScript
   
 Team members: Christoffer Klang, Mikael Zwahlen, Eric Kuan, Sharon Yeo    
