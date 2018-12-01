@@ -3,7 +3,7 @@
 ## Chosen case  
   
 ## The solution (One sentence only)  
-Categorize PDF documents with one-word tags automatically and visualize the amount of projects devoted to different causes through a word cloud  
+Categorize PDF documents with one-word tags and display the number of projects devoted to different causes via country-specific word clouds  
   
 ## Applied open source license:    
 - libnabo (no license)  
