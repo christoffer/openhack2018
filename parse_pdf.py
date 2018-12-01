@@ -1,7 +1,8 @@
 
+import os
 import sys
-from pdfminer.pdfdocument import PDFDocument
-from pdfminer.pdfparser import PDFParser
+from pdfminer.pdfdocument import PDFDocument, PDFTextExtractionNotAllowed
+from pdfminer.pdfparser import PDFParser, PSEOF, PDFSyntaxError
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice, TagExtractor
 from pdfminer.pdfpage import PDFPage
@@ -12,17 +13,25 @@ from pdfminer.image import ImageWriter
 import io
 import re
 import nltk
-from nltk.stem import SnowballStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.probability import FreqDist
 from nltk.corpus import stopwords
 
-KEYWORDS_WE_WANT = ['church', 'school']
+FOSSIL_FUEL_DOCUMENT = 'FOSSIL_FUEL'
+
+def get_document_classification(classification_tokens):
+    if 'fuel' in classification_tokens and 'fossil' in classification_tokens:
+        return FOSSIL_FUEL_DOCUMENT
+    return None
 
 def get_text_lang(word_tokens):
     """Returns the language based on the given tokens. 100% accurate and complete solution."""
     swe_char_re = re.compile('[åäö]')
     is_probably_swedish = any(swe_char_re.search(token) for token in word_tokens)
     return 'swedish' if is_probably_swedish else 'english'
+
+def is_supported_lang(lang):
+    return lang == 'english'
 
 def pdf_to_text(filename):
     resource_manager = PDFResourceManager(caching=True)
@@ -50,26 +59,40 @@ def tokenize(text):
 
 def parse_doc(filepath):
     print("Reading %s and converting it to text..." % filepath)
-    text = pdf_to_text(filepath).strip()
-    if text == '':
-        print("Not parseable %s" % filepath)
+    try:
+        text = pdf_to_text(filepath).strip()
+    except (PSEOF, PDFSyntaxError):
+        print("Failed to parse document %s" % filepath)
         return
-    
+    except PDFTextExtractionNotAllowed:
+        print("Text parsing not allowed for document %s" % filepath)
+        return
+
+    if text == '':
+        print("Document does not contain text data %s" % filepath)
+        return
+
     word_tokens = tokenize(text)
     lang = get_text_lang(word_tokens)
-    print(" - document language %s" % lang)
-        
-    stemmer = SnowballStemmer(lang)
-    stopword_set = stopwords.words(lang)
-    normalized_tokens = [stemmer.stem(token) for token in word_tokens if not token in stopword_set]
+    if not is_supported_lang(lang):
+        print("Not a supported language %s, skipping..." % lang)
+        return
 
-    most_common_words = [word for word, _ in FreqDist(normalized_tokens).most_common(100)]
-    print(most_common_words)
+    lemmatizer = WordNetLemmatizer()
+    stopword_set = stopwords.words(lang)
+    normalized_tokens = [lemmatizer.lemmatize(token, "n") for token in word_tokens if not token in stopword_set]
+
+    classification_tokens = [word for word, _ in FreqDist(normalized_tokens).most_common(100)]
+    print(classification_tokens)
+    doc_class = get_document_classification(classification_tokens)
+    print("Document classification: %s" % doc_class)
 
 def main():
-    parse_doc("sample_pdf/not_a_result_file_sv.pdf")
-    parse_doc("sample_pdf/not_a_result_file_en.pdf")
-    parse_doc("sample_pdf/result_en.pdf")
-
+    pdf_dir = "pdf_cache"
+    pdf_filenames = [filename for filename in os.listdir(pdf_dir) if filename.lower().endswith('.pdf')]
+    for pdf_filename in pdf_filenames:
+        pdf_path = os.path.join(pdf_dir, pdf_filename)
+        parse_doc(pdf_path)
+    
 if __name__ == "__main__":
     main()
