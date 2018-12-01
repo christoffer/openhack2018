@@ -2,5 +2,5 @@
 ```
 pip install virtualenv
 virtualenv venv
-venv/bin/activate (or venv/Scripts/activate if on Windows)
+osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
 ```
