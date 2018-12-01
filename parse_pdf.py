@@ -14,7 +14,7 @@ import re
 
 def pdf_to_text(filename):
     resource_manager = PDFResourceManager(caching=True)
-    outfile = io.BytesIO()
+    outfile = io.StringIO()
     # outfile = open(filename, 'w')
     la_params = LAParams()
     device = TextConverter(
@@ -38,7 +38,7 @@ def get_word_tokens(text):
 def main():
     text = pdf_to_text("sample_pdf/not_a_result_file.pdf")
     for t in get_word_tokens(text):
-        print t
+        print(t)
 
 if __name__ == "__main__":
     main()
