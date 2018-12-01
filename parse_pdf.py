@@ -9,18 +9,18 @@ from pdfminer.converter import XMLConverter, HTMLConverter, TextConverter
 from pdfminer.cmapdb import CMapDB
 from pdfminer.layout import LAParams
 from pdfminer.image import ImageWriter
-import StringIO
+import io
 
 def pdf_to_text(filename):
     resource_manager = PDFResourceManager(caching=True)
-    outfile = StringIO.StringIO()
+    outfile = io.StringIO()
     # outfile = open(filename, 'w')
     la_params = LAParams()
     device = TextConverter(
         resource_manager, outfile, codec='utf-8', laparams=la_params, imagewriter=None
     )
     pagenos = set()
-    with file(filename, 'rb') as fp:
+    with open(filename, 'rb') as fp:
         interpreter = PDFPageInterpreter(resource_manager, device)
         for page in PDFPage.get_pages(fp, pagenos,
                                         maxpages=0, password='',
