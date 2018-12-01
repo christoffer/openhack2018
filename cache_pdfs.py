@@ -48,11 +48,21 @@ def download_and_cache_missing_pdfs(activities):
                     with open(dead_target_path, 'w') as fp:
                         fp.write('')
 
+
+def get_filtered_activities(activities):
+    STATUS_RESULT_CODE_COMPLETED = "3"
+    def is_active(activity):
+        status = activity['iati-activity']['activity-status']
+        return status and status.get('code') == STATUS_RESULT_CODE_COMPLETED
+    return [activity for activity in activities if is_active(activity)]
+
+
 def main():
     with open('all_sedi_activites_api_call.json') as f:
         data = json.load(f)
         activities = data['iati-activities']
-    download_and_cache_missing_pdfs(activities)
-    
+    active_activities = get_filtered_activities(activities)
+    download_and_cache_missing_pdfs(active_activities)
+
 if __name__ == "__main__":
     main()
