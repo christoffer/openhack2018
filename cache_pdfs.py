@@ -10,7 +10,7 @@ def download_document(url, target_path):
     try:
         urllib.request.urlretrieve(url, target_path)
         return True
-    except:
+    except IOError:
         return False
 
 def download_and_cache_missing_pdfs(activities):
@@ -18,9 +18,17 @@ def download_and_cache_missing_pdfs(activities):
         # Grab documents from the activity data
         activity_data = activity['iati-activity']
         document_links = activity_data.get('document-link', [])
-        for document in document_links:
-            if(document['format'] == 'application/pdf' and document['category']['code'] == RESULT_DOCUMENT_CODE):
-                document_url = document['url']
+        if not isinstance(document_links, list):
+            document_links = [document_links]
+        for document_link in document_links:
+            is_pdf = document_link.get('format') == 'application/pdf'
+            document_categories = document_link.get('category', [])
+            if not isinstance(document_categories, list):
+                document_categories = [document_categories]
+            document_category_codes = map(lambda x: x['code'], document_categories)
+            is_result_document = RESULT_DOCUMENT_CODE in document_category_codes
+            if is_pdf and is_result_document:
+                document_url = document_link['url']
                 print(document_url)
                 target_filename = document_url[document_url.rfind('/')+1:]
                 target_dir = 'pdf_cache'
