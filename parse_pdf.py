@@ -87,12 +87,25 @@ def parse_doc(filepath):
     doc_class = get_document_classification(classification_tokens)
     print("Document classification: %s" % doc_class)
 
+def get_text_from_pdf(filepath):
+    cache_filepath = filepath to chache filename somehow
+    if cache_filepath:
+        text = read cache_filepath content
+    else:
+        text = actually_read_pdf_file(filepath)
+        insert_into_cache(text)
+    if text == '':
+        return None
+    return text
+
 def main():
     pdf_dir = "pdf_cache"
-    pdf_filenames = [filename for filename in os.listdir(pdf_dir) if filename.lower().endswith('.pdf')]
+
     for pdf_filename in pdf_filenames:
         pdf_path = os.path.join(pdf_dir, pdf_filename)
-        parse_doc(pdf_path)
-    
+        text = get_text_from_pdf(pdf_path)
+        document_classification = classify_document_text(text)
+        print(document_classification)
+
 if __name__ == "__main__":
     main()
