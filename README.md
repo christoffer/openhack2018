@@ -44,4 +44,8 @@ osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
 - CSS
 - JavaScript
   
-Team members: Christoffer Klang, Mikael Zwahlen, Eric Kuan, Sharon Yeo    
+## Team members:  
+- Christoffer Klang
+- Eric Kuan  
+- Mikael Zwahlen  
+- Sharon Yeo    
