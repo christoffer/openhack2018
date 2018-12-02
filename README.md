@@ -1,11 +1,11 @@
-# Resi  
+# Team Name: Resi  
   
-## Chosen case  
+## Chosen case: Sida Open Aid Visualisation Challenge  
   
 ## The solution (One sentence only)  
-Categorize PDF documents with one-word tags and display the number of projects devoted to different causes via country-specific word clouds  
+Categorize PDF documents with one-word tags and display the number of projects devoted to different causes via country-specific, weighted wordclouds  
   
-## Applied open source license:    
+## Applied open source licenses:    
 - libnabo (no license)  
 - ocrmypdf (GNU general public license)  
 - coreNLP (GNU general public license)  
