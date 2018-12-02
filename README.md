@@ -34,7 +34,7 @@ osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
 4) Obtain and filter url to PDF results documents tied to the activities using the document format and report format code  
 5) Determine if the language of the document is English or Swedish  
 6) Run NLP on the document to do word stemming and remove stop words  
-7) Select and classify key words by sectors indicated on openaid.se  
+7) Identify and classify key words with one-word length by sectors indicated on openaid.se  
 8) Use the k-nearest neighbor algorithm to calculate the weight of key words  
 9) Create a JSON file tying a country to its weighted key words  
 10) Fetch JSON file on webpage to display results on webpage  
