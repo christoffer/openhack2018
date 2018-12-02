@@ -1,9 +1,9 @@
-# Team Name: Resi  
+# Resi  
   
 ## Chosen case: Sida Open Aid Visualisation Challenge  
   
-## The solution (One sentence only)  
-Categorize PDF documents with one-word tags and display the number of projects devoted to different causes via country-specific, weighted wordclouds  
+## The solution: 
+Categorize PDF documents with one-word tags and display the number of projects devoted to different causes via country-specific, weighted wordclouds.  
   
 ## Applied open source licenses:    
 - libnabo (no license)  
@@ -12,7 +12,7 @@ Categorize PDF documents with one-word tags and display the number of projects d
 - Swedish Python Routines (GNU general public license)  
 
   
-## Getting started with your development-environment 
+## Getting started with your development-environment: 
 ```
 pip install virtualenv
 virtualenv venv
@@ -28,15 +28,16 @@ osource venv/bin/activate (or venv/Scripts/activate.bat if on Windows)
 - libnado (running k-nearest neighbor algorithm)  
   
 ## Steps to carry out solution:  
-1) Get iata-identifiers of activities with known recipient country  
+1) Get IATI-identifiers of activities with known recipient country from d-portal.org  
 2) Make API calls to get JSON file containing details tied with the activity  
 3) Filter for completed activities using the activity status code  
-4) Get and filter url to PDF results documents tied to the activities using the document format and report format code  
-5) Determine the language of the document  
+4) Obtain and filter url to PDF results documents tied to the activities using the document format and report format code  
+5) Determine if the language of the document is English or Swedish  
 6) Run NLP on the document to do word stemming and remove stop words  
-7) Use the k-nearest neighbor algorithm to calculate the weight of key words  
-8) Create a JSON file tying a country to its weighted key words  
-9) Fetch JSON file on webpage to display results on webpage  
+7) Select and classify key words by sectors indicated on openaid.se  
+8) Use the k-nearest neighbor algorithm to calculate the weight of key words  
+9) Create a JSON file tying a country to its weighted key words  
+10) Fetch JSON file on webpage to display results on webpage  
   
 ## Languages used:    
 - Python3  
